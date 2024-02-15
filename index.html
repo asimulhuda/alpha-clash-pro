@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +18,8 @@
       class="bg-[#1E1E1E] min-h-screen bg-[url(images/background.png)] bg-no-repeat bg-center"
     >
       <!-- Start Home section -->
-      <section id="home-screen"
+      <section
+        id="home-screen"
         class="text-white min-h-screen flex justify-center items-center"
       >
         <div class="flex flex-col items-center gap-8">
@@ -26,7 +27,8 @@
           <p class="text-2xl">
             Unleash Your Keyboard Kung Fu : Press “Enter” to Play
           </p>
-          <button onclick="play()"
+          <button
+            onclick="play()"
             class="px-8 py-4 font-semibold text-2xl bg-white text-black rounded-lg hover:bg-black hover:text-white"
           >
             Paly Now
@@ -35,10 +37,13 @@
       </section>
       <!-- End Home section -->
       <!-- Start Play Ground section -->
-      <section class="min-h-screen flex justify-center items-center hidden">
+      <section
+        id="play-ground"
+        class="min-h-screen flex justify-center items-center hidden"
+      >
         <div class="flex flex-col items-center gap-28">
           <!-- screen -->
-          <div class="">
+          <div>
             <div
               class="artboard artboard-horizontal phone-6 border-[28px] border-[#010313cc] rounded-2xl bg-[#ffffffb3]"
             >
@@ -50,44 +55,46 @@
                 </p>
               </div>
               <div class="flex justify-center items-center h-full">
-                <p class="text-black text-9xl font-bold">Y</p>
+                <p id="current-alphabet" class="text-black text-9xl font-bold">
+                  Y
+                </p>
               </div>
             </div>
           </div>
           <!-- keyboard -->
           <div class="">
             <div class="flex justify-center gap-1 my-1 w-full">
-              <kbd class="kbd">q</kbd>
-              <kbd class="kbd">w</kbd>
-              <kbd class="kbd">e</kbd>
-              <kbd class="kbd">r</kbd>
-              <kbd class="kbd">t</kbd>
-              <kbd class="kbd">y</kbd>
-              <kbd class="kbd">u</kbd>
-              <kbd class="kbd">i</kbd>
-              <kbd class="kbd">o</kbd>
-              <kbd class="kbd">p</kbd>
+              <kbd id="q" class="kbd">q</kbd>
+              <kbd id="w" class="kbd">w</kbd>
+              <kbd id="e" class="kbd">e</kbd>
+              <kbd id="r" class="kbd">r</kbd>
+              <kbd id="t" class="kbd">t</kbd>
+              <kbd id="y" class="kbd">y</kbd>
+              <kbd id="u" class="kbd">u</kbd>
+              <kbd id="i" class="kbd">i</kbd>
+              <kbd id="o" class="kbd">o</kbd>
+              <kbd id="p" class="kbd">p</kbd>
             </div>
             <div class="flex justify-center gap-1 my-1 w-full">
-              <kbd class="kbd">a</kbd>
-              <kbd class="kbd">s</kbd>
-              <kbd class="kbd">d</kbd>
-              <kbd class="kbd">f</kbd>
-              <kbd class="kbd">g</kbd>
-              <kbd class="kbd">h</kbd>
-              <kbd class="kbd">j</kbd>
-              <kbd class="kbd">k</kbd>
-              <kbd class="kbd">l</kbd>
+              <kbd id="a" class="kbd">a</kbd>
+              <kbd id="s" class="kbd">s</kbd>
+              <kbd id="d" class="kbd">d</kbd>
+              <kbd id="f" class="kbd">f</kbd>
+              <kbd id="g" class="kbd">g</kbd>
+              <kbd id="h" class="kbd">h</kbd>
+              <kbd id="j" class="kbd">j</kbd>
+              <kbd id="k" class="kbd">k</kbd>
+              <kbd id="l" class="kbd">l</kbd>
             </div>
             <div class="flex justify-center gap-1 my-1 w-full">
-              <kbd class="kbd">z</kbd>
-              <kbd class="kbd">x</kbd>
-              <kbd class="kbd">c</kbd>
-              <kbd class="kbd">v</kbd>
-              <kbd class="kbd">b</kbd>
-              <kbd class="kbd">n</kbd>
-              <kbd class="kbd">m</kbd>
-              <kbd class="kbd">/</kbd>
+              <kbd id="z" class="kbd">z</kbd>
+              <kbd id="x" class="kbd">x</kbd>
+              <kbd id="c" class="kbd">c</kbd>
+              <kbd id="v" class="kbd">v</kbd>
+              <kbd id="b" class="kbd">b</kbd>
+              <kbd id="n" class="kbd">n</kbd>
+              <kbd id="m" class="kbd">m</kbd>
+              <kbd id="/" class="kbd">/</kbd>
             </div>
           </div>
           <!-- score -->
@@ -95,32 +102,41 @@
             <button
               class="flex gap-3 text-xl font-medium text-white py-4 px-9 bg-[#894189] rounded-[30px] hover:bg-[#89418999]"
             >
-              Life <img src="images/hart.png" alt="" /><span>1</span>
+              Life <img src="images/hart.png" alt="" /><span id="current-life"
+                >5</span
+              >
             </button>
             <button
               class="flex gap-3 text-xl font-medium text-white py-4 px-9 bg-[#360490] rounded-[30px] hover:bg-[#36049099]"
             >
-              Score <img src="images/dollar.png" alt="" /><span>1</span>
+              Score <img src="images/dollar.png" alt="" /><span
+                id="current-score"
+                >0</span
+              >
             </button>
           </div>
         </div>
       </section>
       <!-- End Play Ground section -->
-      <section class="score min-h-screen flex justify-center items-center hidden">
+      <section
+        id="final-score"
+        class="score min-h-screen flex justify-center items-center hidden"
+      >
         <div
           class="items-center text-center space-y-6 text-white px-12 py-11 bg-[#ffffff32] rounded-2xl"
         >
-          <h2 class="text-6xl font-bold">Score: <span>14</span></h2>
-          <button
+      <h4 class="text-3xl">Game Over !</h4>
+        <h2 class="text-6xl font-bold">Score: <span id="last-score">14</span></h2>
+          <button onclick="play()"
             class="px-8 py-4 font-semibold text-2xl bg-white text-black rounded-lg hover:bg-black hover:text-white"
           >
-            Paly Now
+            Play Again
           </button>
           <p class="text-2xl">Practice will make you Pro</p>
         </div>
       </section>
     </main>
-
+    <script src="scripts/utility.js"></script>
     <script src="scripts/alpha-clash.js"></script>
   </body>
 </html>
